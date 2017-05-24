@@ -18,7 +18,7 @@ public class ShouYeListActivity extends AppCompatActivity {
 
     private Intent i;
     private String[] status_List = new String[]{
-        "温度",
+            "温度",
             "空气湿度",
             "CO2",
             "土壤湿度",
