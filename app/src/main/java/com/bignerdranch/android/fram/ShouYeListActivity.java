@@ -14,8 +14,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 public class ShouYeListActivity extends AppCompatActivity {
 
+    private static String ListId;
     private Intent i;
     private String[] status_List = new String[]{
             "温度",
@@ -61,6 +64,7 @@ public class ShouYeListActivity extends AppCompatActivity {
             mItemTextView2 = (TextView)itemView.findViewById(R.id.status_control_item_text2);
             mLinearLayout = (LinearLayout)itemView.findViewById(R.id.status_control_item_layout);
             mLinearLayout.setOnClickListener(this);
+
         }
 
         @Override
@@ -112,8 +116,15 @@ public class ShouYeListActivity extends AppCompatActivity {
             return 6;
         }
     }
-    public static Intent newIntent(Context packageContext){
+    public static Intent newIntent(Context packageContext,String listid){
         Intent i = new Intent(packageContext,ShouYeListActivity.class);
+        ListId = listid;
         return i;
+    }
+
+    public Gson getMQTJson(String myTopic){
+
+
+        return new Gson();
     }
 }

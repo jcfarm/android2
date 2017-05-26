@@ -84,11 +84,11 @@ public class MonitorFragment extends Fragment {
         public void onClick(View view) {
             switch (getPosition()){
                 case 0:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.1");startActivity(i);break;
-                case 1:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.2");startActivity(i);break;
-                case 2:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.3");startActivity(i);break;
-                case 3:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.4");startActivity(i);break;
-                case 4:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.5");startActivity(i);break;
-                case 5:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.6");startActivity(i);break;
+                case 1:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.1");startActivity(i);break;
+                case 2:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.1");startActivity(i);break;
+                case 3:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.1");startActivity(i);break;
+                case 4:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.1");startActivity(i);break;
+                case 5:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.1");startActivity(i);break;
             }
         }
     }

@@ -32,6 +32,8 @@ public class MonitorScreenActivity extends AppCompatActivity {
     public static Intent newIntent(Context packageContext,String rtsp){
         Intent i = new Intent(packageContext,MonitorScreenActivity.class);
         rtspUrl = rtsp;
+
+
         return i;
     }
 
