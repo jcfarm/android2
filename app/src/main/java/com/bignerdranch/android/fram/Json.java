@@ -13,7 +13,12 @@ public class Json {
 
     private List<Controls> controls ;
 
+    public String defaultval = "default";
+
     public void setId(String id){
+        if (id == null){
+            id = defaultval;
+        }
         this.id = id;
     }
     public String getId(){
@@ -42,33 +47,41 @@ public class Json {
             return this.light;
         }
         public class Light {
-            private int ph;
-            private int id;
-            private int lux;
-            private int c;
+            private String ph;
+            private String id;
+            private String lux;
+            private String c;
 
-            public void setPh(int ph){
-                this.ph = ph;
+            public void setPh(String ph){
+                if (ph == null){
+                    ph = defaultval;
+                }this.ph = ph;
             }
-            public int getPh(){
+            public String getPh(){
                 return this.ph;
             }
-            public void setId(int id){
-                this.id = id;
+            public void setId(String id){
+                if (id == null){
+                    ph = defaultval;
+                }this.id = id;
             }
-            public int getId(){
+            public String getId(){
                 return this.id;
             }
-            public void setLux(int lux){
-                this.lux = lux;
+            public void setLux(String lux){
+                if (lux == null){
+                    lux = defaultval;
+                }this.lux = lux;
             }
-            public int getLux(){
+            public String getLux(){
                 return this.lux;
             }
-            public void setC(int c){
-                this.c = c;
+            public void setC(String c){
+                if (c == null){
+                    c = defaultval;
+                }this.c = c;
             }
-            public int getC(){
+            public String getC(){
                 return this.c;
             }
 
@@ -82,33 +95,41 @@ public class Json {
             return this.co2;
         }
         public class Co2 {
-            private int ph;
-            private int id;
-            private int co2;
-            private int c;
+            private String ph;
+            private String id;
+            private String co2;
+            private String c;
 
-            public void setPh(int ph){
-                this.ph = ph;
+            public void setPh(String ph){
+                if (ph == null){
+                    ph = defaultval;
+                }this.ph = ph;
             }
-            public int getPh(){
+            public String getPh(){
                 return this.ph;
             }
-            public void setId(int id){
-                this.id = id;
+            public void setId(String id){
+                if (id == null){
+                    id = defaultval;
+                }this.id = id;
             }
-            public int getId(){
+            public String getId(){
                 return this.id;
             }
-            public void setCo2(int co2){
-                this.co2 = co2;
+            public void setCo2(String co2){
+                if (co2 == null){
+                    co2 = defaultval;
+                }this.co2 = co2;
             }
-            public int getCo2(){
+            public String getCo2(){
                 return this.co2;
             }
-            public void setC(int c){
-                this.c = c;
+            public void setC(String c){
+                if (c == null){
+                    c = defaultval;
+                }this.c = c;
             }
-            public int getC(){
+            public String getC(){
                 return this.c;
             }
 
@@ -122,26 +143,32 @@ public class Json {
             return this.water;
         }
         public class Water {
-            private int pe;
-            private int id;
-            private int c;
+            private String pe;
+            private String id;
+            private String c;
 
-            public void setPe(int pe){
-                this.pe = pe;
+            public void setPe(String pe){
+                if (pe == null){
+                    pe = defaultval;
+                }this.pe = pe;
             }
-            public int getPe(){
+            public String getPe(){
                 return this.pe;
             }
-            public void setId(int id){
-                this.id = id;
+            public void setId(String id){
+                if (id == null){
+                    id = defaultval;
+                }this.id = id;
             }
-            public int getId(){
+            public String getId(){
                 return this.id;
             }
-            public void setC(int c){
-                this.c = c;
+            public void setC(String c){
+                if (c == null){
+                    c = defaultval;
+                }this.c = c;
             }
-            public int getC(){
+            public String getC(){
                 return this.c;
             }
 
@@ -155,26 +182,32 @@ public class Json {
             return this.salt;
         }
         public class Salt {
-            private int us;
-            private int id;
-            private int mg;
+            private String us;
+            private String id;
+            private String mg;
 
-            public void setUs(int us){
-                this.us = us;
+            public void setUs(String us){
+                if (us == null){
+                    us = defaultval;
+                }this.us = us;
             }
-            public int getUs(){
+            public String getUs(){
                 return this.us;
             }
-            public void setId(int id){
-                this.id = id;
+            public void setId(String id){
+                if (id == null){
+                    id = defaultval;
+                }this.id = id;
             }
-            public int getId(){
+            public String getId(){
                 return this.id;
             }
-            public void setMg(int mg){
-                this.mg = mg;
+            public void setMg(String mg){
+                if (mg == null){
+                    mg = defaultval;
+                }this.mg = mg;
             }
-            public int getMg(){
+            public String getMg(){
                 return this.mg;
             }
 
@@ -189,18 +222,22 @@ public class Json {
             return this.blower;
         }
         public class Blower {
-            private int id;
-            private float value;
-            public void setId(int id){
-                this.id = id;
+            private String id;
+            private String value;
+            public void setId(String id){
+                if (id == null){
+                    id = defaultval;
+                }this.id = id;
             }
-            public int getId(){
+            public String getId(){
                 return this.id;
             }
-            public void setValue(float value){
-                this.value = value;
+            public void setValue(String value){
+                if (value == null){
+                    value = defaultval;
+                }this.value = value;
             }
-            public float getValue(){
+            public String getValue(){
                 return this.value;
             }
 
@@ -213,18 +250,22 @@ public class Json {
             return this.lamp;
         }
         public class Lamp {
-            private int id;
-            private float value;
-            public void setId(int id){
-                this.id = id;
+            private String id;
+            private String value;
+            public void setId(String id){
+                if (id == null){
+                    id = defaultval;
+                }this.id = id;
             }
-            public int getId(){
+            public String getId(){
                 return this.id;
             }
-            public void setValue(float value){
-                this.value = value;
+            public void setValue(String value){
+                if (value == null){
+                    value = defaultval;
+                }this.value = value;
             }
-            public float getValue(){
+            public String getValue(){
                 return this.value;
             }
 
@@ -237,18 +278,22 @@ public class Json {
             return this.web;
         }
         public class Web {
-            private int id;
-            private float value;
-            public void setId(int id){
-                this.id = id;
+            private String id;
+            private String value;
+            public void setId(String id){
+                if (id == null){
+                    id = defaultval;
+                }this.id = id;
             }
-            public int getId(){
+            public String getId(){
                 return this.id;
             }
-            public void setValue(float value){
-                this.value = value;
+            public void setValue(String value){
+                if (value == null){
+                    value = defaultval;
+                }this.value = value;
             }
-            public float getValue(){
+            public String getValue(){
                 return this.value;
             }
 
@@ -261,18 +306,22 @@ public class Json {
             return this.nmembrane;
         }
         public class Nmembrane {
-            private int id;
-            private float value;
-            public void setId(int id){
-                this.id = id;
+            private String id;
+            private String value;
+            public void setId(String id){
+                if (id == null){
+                    id = defaultval;
+                }this.id = id;
             }
-            public int getId(){
+            public String getId(){
                 return this.id;
             }
-            public void setValue(float value){
-                this.value = value;
+            public void setValue(String value){
+                if (value == null){
+                    value = defaultval;
+                }this.value = value;
             }
-            public float getValue(){
+            public String getValue(){
                 return this.value;
             }
 
@@ -285,18 +334,22 @@ public class Json {
             return this.tmembrance;
         }
         public class Tmembrance {
-            private int id;
-            private float value;
-            public void setId(int id){
-                this.id = id;
+            private String id;
+            private String value;
+            public void setId(String id){
+                if (id == null){
+                    id = defaultval;
+                }this.id = id;
             }
-            public int getId(){
+            public String getId(){
                 return this.id;
             }
-            public void setValue(float value){
-                this.value = value;
+            public void setValue(String value){
+                if (value == null){
+                    value = defaultval;
+                }this.value = value;
             }
-            public float getValue(){
+            public String getValue(){
                 return this.value;
             }
 
@@ -309,79 +362,25 @@ public class Json {
             return this.pump;
         }
         public class Pump {
-            private int id;
-            private float value;
-            public void setId(int id){
-                this.id = id;
+            private String id;
+            private String value;
+            public void setId(String id){
+                if (id == null){
+                    id = defaultval;
+                }this.id = id;
             }
-            public int getId(){
+            public String getId(){
                 return this.id;
             }
-            public void setValue(float value){
-                this.value = value;
+            public void setValue(String value){
+                if (value == null){
+                    value = defaultval;
+                }this.value = value;
             }
-            public float getValue(){
+            public String getValue(){
                 return this.value;
             }
 
         }
-    }
-
-
-    public void show(){
-
-        System.out.println(id);
-        for (int i = 0;i<sensors.get(0).light.size();i++){
-            System.out.println(sensors.get(0).light.get(i).id);
-            System.out.println(sensors.get(0).light.get(i).ph);
-            System.out.println(sensors.get(0).light.get(i).c);
-            System.out.println(sensors.get(0).light.get(i).lux);
-        }
-        for (int i = 0;i<sensors.get(1).co2.size();i++){
-            System.out.println(sensors.get(1).co2.get(i).id);
-            System.out.println(sensors.get(1).co2.get(i).ph);
-            System.out.println(sensors.get(1).co2.get(i).c);
-            System.out.println(sensors.get(1).co2.get(i).co2);
-        }
-        for (int i = 0;i<sensors.get(2).water.size();i++){
-            System.out.println(sensors.get(2).water.get(i).id);
-            System.out.println(sensors.get(2).water.get(i).pe);
-            System.out.println(sensors.get(2).water.get(i).c);
-        }
-        for (int i = 0;i<sensors.get(3).salt.size();i++){
-            System.out.println(sensors.get(3).salt.get(i).id);
-            System.out.println(sensors.get(3).salt.get(i).us);
-            System.out.println(sensors.get(3).salt.get(i).mg);
-        }
-
-        for (int i = 0;i<controls.get(0).blower.size();i++){
-            System.out.println(controls.get(0).blower.get(i).id);
-            System.out.println(controls.get(0).blower.get(i).value);
-        }
-        for (int i = 0;i<controls.get(0).lamp.size();i++){
-            System.out.println(controls.get(0).lamp.get(i).id);
-            System.out.println(controls.get(0).lamp.get(i).value);
-        }
-        for (int i = 0;i<controls.get(0).web.size();i++){
-            System.out.println(controls.get(0).web.get(i).id);
-            System.out.println(controls.get(0).web.get(i).value);
-        }
-        for (int i = 0;i<controls.get(0).nmembrane.size();i++){
-            System.out.println(controls.get(0).nmembrane.get(i).id);
-            System.out.println(controls.get(0).nmembrane.get(i).value);
-        }
-        for (int i = 0;i<controls.get(0).tmembrance.size();i++){
-            System.out.println(controls.get(0).tmembrance.get(i).id);
-            System.out.println(controls.get(0).tmembrance.get(i).value);
-        }
-        for (int i = 0;i<controls.get(0).pump.size();i++){
-            System.out.println(controls.get(0).pump.get(i).id);
-            System.out.println(controls.get(0).pump.get(i).value);
-        }
-        for (int i = 0;i<controls.get(0).blower.size();i++){
-            System.out.println(controls.get(0).blower.get(i).id);
-            System.out.println(controls.get(0).blower.get(i).value);
-        }
-
     }
 }
