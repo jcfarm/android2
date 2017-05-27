@@ -242,14 +242,14 @@ public class Json {
             }
 
         }
-        private List<Lamp> lamp ;
-        public void setLamp(List<Lamp> lamp){
+        private List<Lamp> lamp;
+        public void setLamp (List<Lamp> lamp){
             this.lamp = lamp;
         }
         public List<Lamp> getLamp(){
             return this.lamp;
         }
-        public class Lamp {
+        public class Lamp{
             private String id;
             private String value;
             public void setId(String id){
@@ -298,42 +298,14 @@ public class Json {
             }
 
         }
-        private List<Nmembrane> nmembrane ;
+        private List<Nmembrane> nmembrane;
         public void setNmembrane(List<Nmembrane> nmembrane){
             this.nmembrane = nmembrane;
         }
         public List<Nmembrane> getNmembrane(){
             return this.nmembrane;
         }
-        public class Nmembrane {
-            private String id;
-            private String value;
-            public void setId(String id){
-                if (id == null){
-                    id = defaultval;
-                }this.id = id;
-            }
-            public String getId(){
-                return this.id;
-            }
-            public void setValue(String value){
-                if (value == null){
-                    value = defaultval;
-                }this.value = value;
-            }
-            public String getValue(){
-                return this.value;
-            }
-
-        }
-        private List<Tmembrance> tmembrance ;
-        public void setTmembrance(List<Tmembrance> tmembrance){
-            this.tmembrance = tmembrance;
-        }
-        public List<Tmembrance> getTmembrance(){
-            return this.tmembrance;
-        }
-        public class Tmembrance {
+        public class Nmembrane{
             private String id;
             private String value;
             public void setId(String id){
@@ -381,6 +353,81 @@ public class Json {
                 return this.value;
             }
 
+        }
+        private List<Tmembrane> tmembrane;
+        public void setTmembrane(List<Tmembrane> tmembrane){
+            this.tmembrane = tmembrane;
+        }
+        public List<Tmembrane> getTmembrane(){
+            return this.tmembrane;
+        }
+        public class Tmembrane{
+            private String id;
+            private String value;
+            public void setId(String id){
+                if (id == null){
+                    id = defaultval;
+                }this.id = id;
+            }
+            public String getId(){
+                return this.id;
+            }
+            public void setValue(String value){
+                if (value == null){
+                    value = defaultval;
+                }this.value = value;
+            }
+            public String getValue(){
+                return this.value;
+            }
+        }
+    }
+    public void toshow(){
+        for (int i = 0 ; i < sensors.get(0).getLight().size();i++){
+            System.out.println(sensors.get(0).getLight().get(i).getId());
+            System.out.println(sensors.get(0).getLight().get(i).getC());
+            System.out.println(sensors.get(0).getLight().get(i).getLux());
+            System.out.println(sensors.get(0).getLight().get(i).getPh());
+        }
+        for (int i = 0 ; i < sensors.get(1).getCo2().size();i++){
+            System.out.println(sensors.get(1).getCo2().get(i).getId());
+            System.out.println(sensors.get(1).getCo2().get(i).getC());
+            System.out.println(sensors.get(1).getCo2().get(i).getCo2());
+            System.out.println(sensors.get(1).getCo2().get(i).getPh());
+        }
+        for (int i = 0 ; i < sensors.get(2).getWater().size();i++){
+            System.out.println(sensors.get(2).getWater().get(i).getId());
+            System.out.println(sensors.get(2).getWater().get(i).getC());
+            System.out.println(sensors.get(2).getWater().get(i).getPe());
+        }
+        for (int i = 0 ; i < sensors.get(3).getSalt().size();i++){
+            System.out.println(sensors.get(3).getSalt().get(i).getId());
+            System.out.println(sensors.get(3).getSalt().get(i).getMg());
+            System.out.println(sensors.get(3).getSalt().get(i).getUs());
+        }
+        for (int i = 0 ; i < controls.get(1).getLamp().size();i++){
+            System.out.println(controls.get(1).getLamp().get(i).getId());
+            System.out.println(controls.get(1).getLamp().get(i).getValue());
+        }
+        for (int i = 0 ; i < controls.get(3).getNmembrane().size();i++){
+            System.out.println(controls.get(3).getNmembrane().get(i).getId());
+            System.out.println(controls.get(3).getNmembrane().get(i).getValue());
+        }
+        for (int i = 0 ; i < controls.get(0).getBlower().size();i++){
+            System.out.println(controls.get(0).getBlower().get(i).getId());
+            System.out.println(controls.get(0).getBlower().get(i).getValue());
+        }
+        for (int i = 0 ; i < controls.get(2).getWeb().size();i++){
+            System.out.println(controls.get(2).getWeb().get(i).getId());
+            System.out.println(controls.get(2).getWeb().get(i).getValue());
+        }
+        for (int i = 0 ; i < controls.get(5).getPump().size();i++){
+            System.out.println(controls.get(5).getPump().get(i).getId());
+            System.out.println(controls.get(5).getPump().get(i).getValue());
+        }
+        for (int i = 0 ; i < controls.get(4).getTmembrane().size();i++){
+            System.out.println(controls.get(4).getTmembrane().get(i).getId());
+            System.out.println(controls.get(4).getTmembrane().get(i).getValue());
         }
     }
 }

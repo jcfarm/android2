@@ -12,7 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-;import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
+;import com.google.gson.Gson;
+
+import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -60,23 +62,11 @@ public class MainActivity extends FragmentActivity{
                 super.handleMessage(msg);
                 if(msg.what == 1) {
                     String value = msg.obj.toString().split("--split--")[1];
-                    //resultTv.setText((String) msg.obj);
-                    //Gson gson = new Gson();
-                    //Json son = new Json();
-                    //son = gson.fromJson(value,Json.class);
-                    //son.show();
+                    Gson gson = new Gson();
+                    Json son = new Json();
+                    son = gson.fromJson(value,Json.class);
+                    son.toshow();
 
-                    //value_List[5] = son.getId();
-
-                    /*switch (title){
-                        case "温度":resultTv.setText((String) msg.obj);break;
-                        case "湿度":resultTv1.setText((String) msg.obj);break;
-                        case "酸碱度":resultTv2.setText((String) msg.obj);break;
-                    }*/
-
-
-
-                    System.out.println("-----------------------------");
                 } else if(msg.what == 2) {
                     Toast.makeText(MainActivity.this, "连接成功", Toast.LENGTH_SHORT).show();
                     try {

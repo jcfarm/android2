@@ -60,12 +60,13 @@ public class ShouYeListActivity extends AppCompatActivity {
             "5",
             "6",
     };
-    public String st = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shou_ye_list);
+
+        value_List[3] = new Json().getId();
 
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.status_list);
@@ -118,7 +119,6 @@ public class ShouYeListActivity extends AppCompatActivity {
         public void onBindViewHolder(ShouYeListHolder holder, int position) {
             Drawable drawable1 = getResources().getDrawable(R.drawable.a);
             Drawable drawable2 = getResources().getDrawable(R.drawable.b);
-            value_List[3] = st;
             switch (position) {
                 case 0:
                     holder.mImageView.setImageDrawable(drawable1);
