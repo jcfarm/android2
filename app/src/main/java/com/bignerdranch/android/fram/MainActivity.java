@@ -1,6 +1,7 @@
 package com.bignerdranch.android.fram;
 
 
+import android.app.Application;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -34,6 +35,7 @@ public class MainActivity extends FragmentActivity{
     private static String myTopic = "myTopic";
     private MqttConnectOptions options;
     private ScheduledExecutorService scheduler;
+    private MyApplication applic;
 
     private Class[] fragment = new Class[]{FrontPageFragment.class,MonitorFragment.class,
             ControlFragment.class,DataFragment.class};
@@ -55,22 +57,21 @@ public class MainActivity extends FragmentActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        applic = (MyApplication)getApplication();
+
         init();
         handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 if(msg.what == 1) {
-                    String value = msg.obj.toString().split("--split--")[1];
-                    Gson gson = new Gson();
-                    Json son = new Json();
-                    son = gson.fromJson(value,Json.class);
-                    son.toshow();
+                    //System.out.println("6444444444"+"_______"+applic.getMQTjson().getId());
 
                 } else if(msg.what == 2) {
                     Toast.makeText(MainActivity.this, "连接成功", Toast.LENGTH_SHORT).show();
                     try {
-                        client.subscribe(myTopic, 1);
+                        applic.setTopic("01");
+                        client.subscribe(applic.getMyTopic(), 1);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -133,10 +134,15 @@ public class MainActivity extends FragmentActivity{
                 public void messageArrived(String topicName, MqttMessage message)
                         throws Exception {
                     //subscribe
+                    Gson gson = new Gson();
+                    Json son = new Json();
+                    son = gson.fromJson(message.toString(),Json.class);
+                    applic = (MyApplication) getApplication();
+                    applic.setMQTjson(son);
+                    //son.toshow();
                     System.out.println("messageArrived----------");
                     Message msg = new Message();
                     msg.what = 1;
-                    msg.obj = topicName+"--split--"+message.toString();
                     handler.sendMessage(msg);
                 }
             });
