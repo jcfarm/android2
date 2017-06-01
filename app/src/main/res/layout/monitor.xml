@@ -10,7 +10,8 @@
         android:layout_height="60dp"
         android:gravity="center"
         android:background="@color/colorPrimary">
-        <ImageView
+        <Button
+            android:id="@+id/serach"
             android:layout_width="40dp"
             android:layout_height="40dp"/>
         <TextView

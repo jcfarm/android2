@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -42,6 +43,7 @@ public class MonitorFragment extends Fragment {
     private Intent i;
 
     private RecyclerView recyclerView;
+    private Button serach;
 
 
     public MonitorFragment() {
@@ -54,22 +56,34 @@ public class MonitorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_monitor, container, false);
-        View view = inflater.inflate(R.layout.monitor,container,false);
 
+        View view = inflater.inflate(R.layout.monitor,container,false);
         recyclerView = (RecyclerView)view.findViewById(R.id.monitor_list_recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(new MonitorAdapter());
+        serach = (Button)view.findViewById(R.id.serach);
+        serach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),Search.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
+
+
 
     private class MonitorHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private LinearLayout homeLinearLayout;
         private ImageView homeImageView;
         private TextView homeItemTextView;
+
+
 
         public MonitorHolder(LayoutInflater inflater, ViewGroup container) {
             super(inflater.inflate(R.layout.frontpage,container,false));
@@ -78,17 +92,18 @@ public class MonitorFragment extends Fragment {
             homeItemTextView = (TextView) itemView.findViewById(R.id.list_name);
             homeLinearLayout = (LinearLayout)itemView.findViewById(R.id.list_frontPage);
             homeLinearLayout.setOnClickListener(this);
+
         }
 
         @Override
         public void onClick(View view) {
             switch (getPosition()){
-                case 0:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
-                case 1:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
-                case 2:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
-                case 3:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
-                case 4:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
-                case 5:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
+                case 0:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.1");startActivity(i);break;
+                case 1:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.2");startActivity(i);break;
+                case 2:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.3");startActivity(i);break;
+                case 3:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.4");startActivity(i);break;
+                case 4:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.5");startActivity(i);break;
+                case 5:i = MonitorScreenActivity.newIntent(getActivity(),"10.8.103.6");startActivity(i);break;
             }
         }
     }
