@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="colorPrimary">#36ba08</color>
-    <color name="colorPrimaryDark">#2a8c08</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="tab_text_color">#45c01a</color>
-    <color name="normal_color">#FF5C696B</color>
-    <color name="content_background_color">#FFF9F6F6</color>
-</resources>
