@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".Search">
         </activity>
+        <activity android:name=".ControlListActivity">
+        </activity>
     </application>
 
 </manifest>

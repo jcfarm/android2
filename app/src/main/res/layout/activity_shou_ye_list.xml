@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
               android:orientation="vertical"
-    tools:context="com.bignerdranch.android.fram.ShouYeListActivity">
+              tools:context="com.bignerdranch.android.fram.ShouYeListActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:id="@+id/id_zhuangtai_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="几号田"
+            android:text="智慧农场"
             android:textColor="#fff"
             android:textSize="25dp"/>
     </LinearLayout>
@@ -27,7 +27,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center"
@@ -59,15 +59,34 @@
                 android:textSize="20dp"/>
 
         </LinearLayout>
-
         <android.support.v7.widget.RecyclerView
-            android:background="#e6e4e4"
-            android:id="@+id/status_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                android:background="#e6e4e4"
+                android:id="@+id/status_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        </android.support.v7.widget.RecyclerView>
+        </android.support.v7.widget.RecyclerView>-->
 
+        <android.support.v4.view.ViewPager
+            android:id="@+id/front_view_pager"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <android.support.v4.view.PagerTabStrip
+                android:id="@+id/tabstrip"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center">
+            </android.support.v4.view.PagerTabStrip>
+
+            <android.support.v7.widget.RecyclerView
+                android:background="#e6e4e4"
+                android:id="@+id/status_list"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.view.ViewPager>
     </LinearLayout>
 
 </LinearLayout>

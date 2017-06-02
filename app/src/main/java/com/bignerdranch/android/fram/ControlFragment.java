@@ -64,15 +64,16 @@ public class ControlFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
-            /*
+
             switch (getPosition()){
-                case 0:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
-                case 1:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
-                case 2:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
-                case 3:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
-                case 4:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
-                case 5:i = MonitorScreenActivity.newIntent(getActivity());startActivity(i);break;
-            }*/
+                case 0:i = ControlListActivity.newIntent(getActivity(),control_List[getPosition()]);startActivity(i);break;
+                case 1:i = ControlListActivity.newIntent(getActivity(),control_List[getPosition()]);startActivity(i);break;
+                case 2:i = ControlListActivity.newIntent(getActivity(),control_List[getPosition()]);startActivity(i);break;
+                case 3:i = ControlListActivity.newIntent(getActivity(),control_List[getPosition()]);startActivity(i);break;
+                case 4:i = ControlListActivity.newIntent(getActivity(),control_List[getPosition()]);startActivity(i);break;
+                case 5:i = ControlListActivity.newIntent(getActivity(),control_List[getPosition()]);startActivity(i);break;
+            }
+
         }
     }
 
