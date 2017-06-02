@@ -82,14 +82,14 @@ public class FrontPageFragment extends Fragment {
         @Override
         public void onClick(View view) {
             //从服务器获取大棚ID
-            String ListId = "1";
+            String[] ListId = {"01","02","03","04","05"};
             switch (getPosition()){
-                case 0:i = ShouYeListActivity.newIntent(getActivity(),ListId);startActivity(i);break;
-                case 1:i = ShouYeListActivity.newIntent(getActivity(),ListId);startActivity(i);break;
-                case 2:i = ShouYeListActivity.newIntent(getActivity(),ListId);startActivity(i);break;
-                case 3:i = ShouYeListActivity.newIntent(getActivity(),ListId);startActivity(i);break;
-                case 4:i = ShouYeListActivity.newIntent(getActivity(),ListId);startActivity(i);break;
-                case 5:i = ShouYeListActivity.newIntent(getActivity(),ListId);startActivity(i);break;
+                case 0:i = ShouYeListActivity.newIntent(getActivity(),ListId[getPosition()]);startActivity(i);break;
+                case 1:i = ShouYeListActivity.newIntent(getActivity(),ListId[getPosition()]);startActivity(i);break;
+                case 2:i = ShouYeListActivity.newIntent(getActivity(),ListId[getPosition()]);startActivity(i);break;
+                case 3:i = ShouYeListActivity.newIntent(getActivity(),ListId[getPosition()]);startActivity(i);break;
+                case 4:i = ShouYeListActivity.newIntent(getActivity(),ListId[getPosition()]);startActivity(i);break;
+                case 5:i = ShouYeListActivity.newIntent(getActivity(),ListId[getPosition()]);startActivity(i);break;
             }
         }
     }

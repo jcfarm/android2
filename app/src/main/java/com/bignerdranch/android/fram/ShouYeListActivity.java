@@ -39,7 +39,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ShouYeListActivity extends AppCompatActivity {
 
-    private MyApplication application;
+    private MyApplication application ;
 
     private static String ListID;
     private Intent i;
@@ -57,17 +57,37 @@ public class ShouYeListActivity extends AppCompatActivity {
             //Intent intent = new Intent();
             //intent.setClass(ShouYeListActivity.this,ShouYeListActivity.class);
             //ShouYeListActivity.this.startActivity(intent);
-            try {
-                co2TextView.setText(value_List[2] = application.getMQTjson().getSensors().get(1).getCo2().get(0).getCo2());
-                cTextView.setText(value_List[0] = application.getMQTjson().getSensors().get(1).getCo2().get(0).getC());
-                ph2TextView.setText(value_List[1] = application.getMQTjson().getSensors().get(0).getLight().get(0).getPh());
-                peTextView.setText(value_List[3] = application.getMQTjson().getSensors().get(2).getWater().get(0).getPe());
-                usTextView.setText(value_List[4] = application.getMQTjson().getSensors().get(3).getSalt().get(0).getUs());
-                mg2TextView.setText(value_List[5] = application.getMQTjson().getSensors().get(3).getSalt().get(0).getMg());
 
+            try{
+                value_List[0] = application.getMQTjson().getSensors().get(1).getCo2().get(0).getC();
             }catch (Exception e){
-
             }
+            try{
+                value_List[1] = application.getMQTjson().getSensors().get(0).getLight().get(0).getPh();
+            }catch (Exception e){
+            }
+            try{
+                value_List[2] = application.getMQTjson().getSensors().get(1).getCo2().get(0).getCo2();
+            }catch (Exception e){
+            }
+            try{
+                value_List[3] = application.getMQTjson().getSensors().get(2).getWater().get(0).getPe();
+            }catch (Exception e){
+            }
+            try{
+                value_List[4] = application.getMQTjson().getSensors().get(3).getSalt().get(0).getUs();
+            }catch (Exception e){
+            }
+            try{
+                value_List[5] = application.getMQTjson().getSensors().get(3).getSalt().get(0).getMg();
+            }catch (Exception e){
+            }
+            co2TextView.setText(value_List[2]);
+            cTextView.setText(value_List[0]);
+            ph2TextView.setText(value_List[1]);
+            peTextView.setText(value_List[3]);
+            usTextView.setText(value_List[4]);
+            mg2TextView.setText(value_List[5]);
 
         }
     };
@@ -118,17 +138,42 @@ public class ShouYeListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shou_ye_list);
         application = (MyApplication)getApplication();
-
+        application.setTopic(ListID);
         try{
             value_List[0] = application.getMQTjson().getSensors().get(1).getCo2().get(0).getC();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        try{
             value_List[1] = application.getMQTjson().getSensors().get(0).getLight().get(0).getPh();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        try{
             value_List[2] = application.getMQTjson().getSensors().get(1).getCo2().get(0).getCo2();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        try{
             value_List[3] = application.getMQTjson().getSensors().get(2).getWater().get(0).getPe();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        try{
             value_List[4] = application.getMQTjson().getSensors().get(3).getSalt().get(0).getUs();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        try{
             value_List[5] = application.getMQTjson().getSensors().get(3).getSalt().get(0).getMg();
         }catch (Exception e){
-
+            e.printStackTrace();
         }
+
+
+
+
+
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.status_list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -235,6 +280,7 @@ public class ShouYeListActivity extends AppCompatActivity {
     public static Intent newIntent(Context packageContext, String listId) {
         Intent i = new Intent(packageContext, ShouYeListActivity.class);
         ListID = listId;
+        System.out.println("进入子页面"+ListID);
         return i;
     }
     @Override
@@ -242,7 +288,9 @@ public class ShouYeListActivity extends AppCompatActivity {
         if (timer != null){
             timer.cancel();
             timer = null;
+            application.setTopic("");
         }
+        application.setTopic("");
         super.onDestroy();
     }
 
